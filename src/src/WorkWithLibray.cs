@@ -47,7 +47,14 @@ namespace src
             {
                 strmas[i] = Libray[i].Name + " " + Libray[i].Author + " " + Libray[i].Genre;
             }
-            File.WriteAllLines(fileName, strmas);
+			try
+			{
+				File.WriteAllLines(fileName, strmas);
+			}
+			catch (Exception ex) 
+			{
+                Console.WriteLine("Во время сохранения файла произошла ошибка");
+			}
         }
 	}
 }
